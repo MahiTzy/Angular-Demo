@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Angular App</title>
+</head>
+
+<body>
+  <!-- <div [ngStyle]="{'background-color': myData == 'Mohit' ? 'green' : 'red'}">
+    <h1>Angular Demo</h1>
+  </div> -->
+  <!--<h1 class="custom"><app-login></app-login></h1>
+  <button (click)="getName()">Click ME</button> -->
+  <!-- Parent : {{CData}} -->
+  <!-- <app-login (chiledevent)="getData($event)"></app-login> -->
+  <!-- <app-login (chiledevent)="CData=$event"></app-login> -->
+  <!-- Parent : <input type="text" #PComponent (keyup)="0"/> -->
+  <!-- <app-login [PData]="PComponent.value"></app-login> -->
+  <!-- <input type="text" [value]="myData" #message (keyup)="onChange(message.value)"/> -->
+  <!-- <input type="text" [(ngModel)]="myData"/>
+  Your Message : {{myData | slice:0:3}}
+  {{company | json}}
+  @for (student of students; track student.id) {
+    <li>{{student.name}}</li>
+  } -->
+  <!-- 12.512112 | number:'2.1-2'
+  {{12.512212 | number:'2.1-2'}}
+  {{12.34 | percent:'3.2-5'}} -->
+  <!-- {{12.34 | currency:'INR':'symbol':'2.2-5'}}
+   -->
+  <!-- {{currentDate | date:'fullDate'}}
+   {{currentDate | date:'shortDate'}}
+   {{currentDate | date:'shortTime'}}
+   {{currentDate | date:'mediumTime'}}
+   {{currentDate | date:'longTime'}}
+   {{currentDate | date:'medium'}}
+   {{currentDate | date:'short'}}
+   {{currentDate | date:'long'}}
+   {{currentDate | date:'full'}} -->
+  <!-- {{"Hello" | welcome}}
+   {{_msg}} -->
+  <!-- <app-comp1></app-comp1>
+  <app-comp2></app-comp2> -->
+  <div>
+    <a routerLink="home" routerLinkActive="active">Home</a>
+    <a routerLink="aboutus" routerLinkActive="active">About Us</a>
+    <a routerLink="contactus" routerLinkActive="active">Contact Us</a>
+    <a routerLink="services"routerLinkActive="active">Services</a>
+    <!-- Use routerLink with outlets for named outlet navigation -->
+    <!-- <a [routerLink]="[{outlets: {header: ['aboutusnew', '1']}}]">AboutUsNew</a> -->
+    <a routerLink="login" routerLinkActive="active">Login</a>
+  </div>
+  <app-templateform></app-templateform>
+  <app-reactiveform></app-reactiveform>
+  <router-outlet></router-outlet>
+  <!-- <router-outlet name="header"></router-outlet> -->
+</body>
+
+</html>

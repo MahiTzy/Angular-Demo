@@ -1,0 +1,48 @@
+<p>reactiveform works!</p>
+<div>
+    <form [formGroup]="regForm" (ngSubmit)="register()">
+        <div>
+            <div>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" formControlName="name">
+                <div *ngIf="regForm.controls['name'].touched && !regForm.controls['name'].valid">
+                    @if (regForm.controls['name'].hasError('required')) {
+                    <span>Name is required!</span>
+                    }
+                    @else if (regForm.controls['name'].hasError('minlength')) {
+                    <span>Name must be at least 3 characters long!</span>
+                    }
+                    @else if (regForm.controls['name'].hasError('maxlength')){
+                    <span>Name cannot be more than 10 characters long!</span>
+                    }
+                </div>
+            </div>
+            <div formArrayName="email">
+                <label for="email">Email</label>
+                <div *ngFor="let e of regForm.get('email').controls; let i = index">
+                    <input type="email" id="email" name="email" [formControlName]="i">
+                    <button type="button" (click)="removeEmail(i)">Remove</button>
+                    <button type="button" (click)="addEmail()">Add</button>
+                </div>
+
+                <div *ngIf="regForm.controls['email'].touched && !regForm.controls['email'].valid">
+                    Email is required!
+                </div>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" formControlName="password">
+                <div *ngIf="regForm.controls['password'].touched && !regForm.controls['password'].valid">
+                    Password is required!
+                </div>
+            </div>
+            <div>
+                <button type="submit">Submit</button>
+                <!-- <button type="reset">Reset</button> -->
+                <button type="button" (click)="reset()">Reset</button>
+                <button type="button" (click)="setValue()">Set Value</button>
+                <button type="button" (click)="patchValue()">Patch Value</button>
+            </div>
+        </div>
+    </form>
+</div>
